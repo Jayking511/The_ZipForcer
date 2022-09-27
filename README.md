@@ -2,6 +2,8 @@
 
 A python project which tries to crack the password of any zip file by trying set of various possible combinations of words from the given wordlist.
 
+Using **MULTITHREADING** helped in making the process a lot faster.
+
 Password will be bruteforced by trying various combinations from the **WORDLIST** you provide.
 
 Initial interface will be as follows:
