@@ -77,15 +77,16 @@ elif choice=='1':
     for word in finalset:
         cnt+=1
         t=threading.Thread(target=password, args=[file_path, word, cnt, init_time, myqueue])
+        try:
+            if myqueue.get_nowait()=="Exit":
+                sys.exit()
+        except queue.Empty:
+            pass
         t.daemon=True
         t.start()
         threads.append(t)
     for i in threads:
         i.join()
-    if myqueue.get_nowait()=="Exit":
-        sys.exit()
-    else:
-        pass
     print("Password not found :( ")
 else:
     print("Invalid Response !")
