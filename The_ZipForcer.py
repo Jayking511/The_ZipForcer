@@ -42,6 +42,7 @@ def permutation(word_list):
     perm=permutations(wordlist, 2)
     for i in perm:
         finallist.append("@".join(i))
+        finallist.append("".join(i))
     finalset=set(finallist)
     return finalset
 
